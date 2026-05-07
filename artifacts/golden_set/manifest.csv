@@ -1,0 +1,9 @@
+stem,input_npy,target_npy,pred_npy
+101085,101085_input.npy,101085_target.npy,101085_pred.npy
+101087,101087_input.npy,101087_target.npy,101087_pred.npy
+102061,102061_input.npy,102061_target.npy,102061_pred.npy
+103070,103070_input.npy,103070_target.npy,103070_pred.npy
+105025,105025_input.npy,105025_target.npy,105025_pred.npy
+106024,106024_input.npy,106024_target.npy,106024_pred.npy
+108005,108005_input.npy,108005_target.npy,108005_pred.npy
+108070,108070_input.npy,108070_target.npy,108070_pred.npy
