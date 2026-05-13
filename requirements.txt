@@ -1,0 +1,6 @@
+numpy<2
+torch
+onnx
+onnxruntime
+hls4ml
+qonnx
