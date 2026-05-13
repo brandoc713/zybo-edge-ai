@@ -3,33 +3,10 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+import onnx
 import torch
-import torch.nn as nn
 
-
-TARGET_HEIGHT = 121
-TARGET_WIDTH = 162
-
-
-class TinyEdgeFCN(nn.Module):
-    def __init__(self) -> None:
-        super().__init__()
-        self.net = nn.Sequential(
-            nn.Conv2d(1, 16, kernel_size=3, padding=1),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(16, 16, kernel_size=3, padding=1),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(16, 32, kernel_size=3, padding=1),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(32, 32, kernel_size=3, padding=1),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(32, 16, kernel_size=3, padding=1),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(16, 1, kernel_size=1),
-        )
-
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        return self.net(x)
+from tiny_edge_model import DEFAULT_TARGET_HEIGHT, DEFAULT_TARGET_WIDTH, TinyEdgeFCN
 
 
 def parse_args() -> argparse.Namespace:
@@ -55,8 +32,35 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--opset",
         type=int,
-        default=13,
+        default=18,
         help="ONNX opset version to use for export",
+    )
+    parser.add_argument(
+        "--input-height",
+        type=int,
+        default=DEFAULT_TARGET_HEIGHT,
+        help="Input tensor height used for ONNX export",
+    )
+    parser.add_argument(
+        "--input-width",
+        type=int,
+        default=DEFAULT_TARGET_WIDTH,
+        help="Input tensor width used for ONNX export",
+    )
+    parser.add_argument(
+        "--input-name",
+        default="image",
+        help="Input tensor name for the ONNX graph",
+    )
+    parser.add_argument(
+        "--output-name",
+        default="logits",
+        help="Output tensor name for the ONNX graph",
+    )
+    parser.add_argument(
+        "--skip-onnx-check",
+        action="store_true",
+        help="Skip running onnx.checker after export",
     )
     return parser.parse_args()
 
@@ -79,7 +83,13 @@ def main() -> None:
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    dummy_input = torch.zeros(1, 1, TARGET_HEIGHT, TARGET_WIDTH, dtype=torch.float32)
+    dummy_input = torch.zeros(
+        1,
+        1,
+        args.input_height,
+        args.input_width,
+        dtype=torch.float32,
+    )
     torch.onnx.export(
         model,
         dummy_input,
@@ -87,13 +97,21 @@ def main() -> None:
         export_params=True,
         opset_version=args.opset,
         do_constant_folding=True,
-        input_names=["image"],
-        output_names=["logits"],
+        input_names=[args.input_name],
+        output_names=[args.output_name],
         dynamic_axes=None,
     )
 
+    if not args.skip_onnx_check:
+        onnx_model = onnx.load(str(output_path))
+        onnx.checker.check_model(onnx_model)
+
     print(f"Exported ONNX model to {output_path}")
-    print(f"Expected input shape: (1, 1, {TARGET_HEIGHT}, {TARGET_WIDTH})")
+    print(f"Expected input shape: (1, 1, {args.input_height}, {args.input_width})")
+    if args.skip_onnx_check:
+        print("Skipped ONNX checker validation (--skip-onnx-check).")
+    else:
+        print("ONNX checker validation passed.")
 
 
 if __name__ == "__main__":
