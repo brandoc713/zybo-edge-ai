@@ -1,0 +1,30 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5551" msg_severity="WARNING" msg_loc="firmware/nnet_utils/nnet_activation.h:402:24" msg_body="unexpected pragma argument 'instances', expects function/operation">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5523" msg_severity="WARNING" msg_loc="firmware/nnet_utils/nnet_dense_resource.h:33:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5523" msg_severity="WARNING" msg_loc="firmware/nnet_utils/nnet_dense_resource.h:107:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5523" msg_severity="WARNING" msg_loc="firmware/nnet_utils/nnet_dense_resource.h:189:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5524" msg_severity="WARNING" msg_loc="firmware/nnet_utils/nnet_conv2d.h:48:26" msg_body="'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5524" msg_severity="WARNING" msg_loc="firmware/nnet_utils/nnet_conv2d.h:66:26" msg_body="'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5551" msg_severity="WARNING" msg_loc="firmware/nnet_utils/nnet_conv2d_stream.h:80:24" msg_body="unexpected pragma argument 'instances', expects function/operation">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5551" msg_severity="WARNING" msg_loc="firmware/nnet_utils/nnet_conv2d_stream.h:81:24" msg_body="unexpected pragma argument 'instances', expects function/operation">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5553" msg_severity="WARNING" msg_loc="firmware/edge_cnn_linear.cpp:15:47" msg_body="Unsupported interface port data type in '#pragma HLS interface ap_vld'">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

@@ -1,0 +1,96 @@
+INFO-FLOW: Workspace C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1 opened at Tue May 26 00:56:43 -0400 2026
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       get_config_interface -m_axi_latency 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -default_interface 
+Execute       get_config_rtl -register_reset_num 
+Execute     set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+Execute       create_platform xc7z020clg400-1 -board  
+DBG:HLSDevice: Trying to load device library: C:/Xilinx/Vitis_HLS/2021.2\lib\win64.o\librdi_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2021.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/zynq_dsp48e1.hlp 
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+Command       create_platform done; 1.776 sec.
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.141 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.942 sec.
+Execute     create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute       ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute       get_config_compile -effort 
+Execute       get_config_compile -enable_clang39 
+Execute       get_config_compile -g 
+Execute       get_config_compile -hw_syn 
+Execute       get_config_compile -ng 
+Execute       get_config_compile -opt_fp 
+Execute       get_config_compile -skip_cdt 
+Execute       get_config_compile -skip_syncheck 
+Execute       get_config_compile -skip_transform 
+Execute       get_config_compile -pre_tcl 
+Execute       get_config_compile -keep_printf 
+Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.023 seconds; current allocated memory: 1.161 GB.
+INFO: [HLS 200-10] Analyzing design file 'firmware/edge_cnn_linear.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute         get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling firmware/edge_cnn_linear.cpp as C++
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/clang firmware/edge_cnn_linear.cpp -foptimization-record-file=C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/edge_cnn_linear.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx/Vitis_HLS/2021.2/tps/mingw/6.2.0/win64.o/nt -fhls -fno-exceptions -E -std=c++11 -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/edge_cnn_linear.pp.0.cpp -hls-platform-db-name=C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow > C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/edge_cnn_linear.cpp.clang.out.log 2> C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/edge_cnn_linear.cpp.clang.err.log 
+Command         ap_eval done; 2.277 sec.
+INFO-FLOW: Done: GCC PP 39 time: 2.3 seconds per iteration
+Execute         set_directive_top edge_cnn_linear -name=edge_cnn_linear 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute           source C:/Xilinx/Vitis_HLS/2021.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+Execute         list_core -type functional_unit 
+INFO-FLOW: Source syntax check for synthesis
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/edge_cnn_linear.pp.0.cpp -hls-platform-db-name=C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow > C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/clang.out.log 2> C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/clang.err.log 
+Command         ap_eval done; 150.252 sec.
+WARNING: [HLS 207-5551] unexpected pragma argument 'instances', expects function/operation (firmware/nnet_utils/nnet_activation.h:402:24)
+WARNING: [HLS 207-5523] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (firmware/nnet_utils/nnet_dense_resource.h:33:9)
+WARNING: [HLS 207-5523] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (firmware/nnet_utils/nnet_dense_resource.h:107:9)
+WARNING: [HLS 207-5523] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (firmware/nnet_utils/nnet_dense_resource.h:189:9)
+WARNING: [HLS 207-5524] 'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead (firmware/nnet_utils/nnet_conv2d.h:48:26)
+WARNING: [HLS 207-5524] 'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead (firmware/nnet_utils/nnet_conv2d.h:66:26)
+WARNING: [HLS 207-5551] unexpected pragma argument 'instances', expects function/operation (firmware/nnet_utils/nnet_conv2d_stream.h:80:24)
+WARNING: [HLS 207-5551] unexpected pragma argument 'instances', expects function/operation (firmware/nnet_utils/nnet_conv2d_stream.h:81:24)
+WARNING: [HLS 207-5553] Unsupported interface port data type in '#pragma HLS interface ap_vld' (firmware/edge_cnn_linear.cpp:15:47)
+Execute         clang_tidy xilinx-systemc-detector -desc systemc-detector C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/edge_cnn_linear.pp.0.cpp std=c++11 -target fpga  -directive=C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/.systemc_flag -fix-errors C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/edge_cnn_linear.pp.0.cpp -- -std=c++11 -target fpga -fhls -ferror-limit=0
+Command         clang_tidy done; 187.82 sec.
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/edge_cnn_linear.pp.0.cpp std=c++11 -target fpga  -directive=C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/all.directive.json -fix-errors C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/.autopilot/db/edge_cnn_linear.pp.0.cpp -- -std=c++11 -target fpga -fhls -ferror-limit=0
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+Command         clang_tidy done; error code: 1; 58.292 sec.
+Command       elaborate done; error code: 1; 398.946 sec.
+Command     csynth_design done; error code: 1; 398.966 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 398.966 seconds; current allocated memory: 0.461 MB.
+Command   ap_source done; error code: 1; 401.089 sec.
+Command vitis_hls_bin done; error code: 1; 401.135 sec.
+INFO: [Common 17-344] 'source' was cancelled
+Execute cleanup_all 

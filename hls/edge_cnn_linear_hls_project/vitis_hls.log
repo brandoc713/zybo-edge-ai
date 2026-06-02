@@ -1,0 +1,38 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source C:/Xilinx/Vitis_HLS/2021.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2021.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'brand' on host 'brandon-x13' (Windows NT_amd64 version 6.2) on Tue May 26 00:56:42 -0400 2026
+INFO: [HLS 200-10] In directory 'C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project'
+Sourcing Tcl script 'run_hls_zybo.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset edge_cnn_linear_prj 
+INFO: [HLS 200-10] Creating and opening project 'C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj'.
+INFO: [HLS 200-1510] Running: set_top edge_cnn_linear 
+INFO: [HLS 200-1510] Running: add_files firmware/edge_cnn_linear.cpp -cflags -std=c++11 
+INFO: [HLS 200-10] Adding design file 'firmware/edge_cnn_linear.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+INFO: [HLS 200-10] Creating and opening solution 'C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+WARNING: [HLS 200-40] No C:/Users/brand/Documents/engs192/zybo-edge-ai/hls/edge_cnn_linear_hls_project/edge_cnn_linear_prj/solution1/solution1.aps file found.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.023 seconds; current allocated memory: 1.161 GB.
+INFO: [HLS 200-10] Analyzing design file 'firmware/edge_cnn_linear.cpp' ... 
+WARNING: [HLS 207-5551] unexpected pragma argument 'instances', expects function/operation (firmware/nnet_utils/nnet_activation.h:402:24)
+WARNING: [HLS 207-5523] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (firmware/nnet_utils/nnet_dense_resource.h:33:9)
+WARNING: [HLS 207-5523] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (firmware/nnet_utils/nnet_dense_resource.h:107:9)
+WARNING: [HLS 207-5523] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (firmware/nnet_utils/nnet_dense_resource.h:189:9)
+WARNING: [HLS 207-5524] 'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead (firmware/nnet_utils/nnet_conv2d.h:48:26)
+WARNING: [HLS 207-5524] 'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead (firmware/nnet_utils/nnet_conv2d.h:66:26)
+WARNING: [HLS 207-5551] unexpected pragma argument 'instances', expects function/operation (firmware/nnet_utils/nnet_conv2d_stream.h:80:24)
+WARNING: [HLS 207-5551] unexpected pragma argument 'instances', expects function/operation (firmware/nnet_utils/nnet_conv2d_stream.h:81:24)
+WARNING: [HLS 207-5553] Unsupported interface port data type in '#pragma HLS interface ap_vld' (firmware/edge_cnn_linear.cpp:15:47)

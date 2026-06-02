@@ -1,0 +1,257 @@
+<profile>
+
+<ReportVersion>
+<Version>2021.2</Version>
+</ReportVersion>
+
+<UserAssignments>
+<unit>ns</unit>
+<ProductFamily>zynq</ProductFamily>
+<Part>xc7z020-clg400-1</Part>
+<TopModelName>conv_2d_cl_array_ap_fixed_16_6_5_3_0_1u_array_ap_fixed_37_17_5_3_0_4u_config2_s</TopModelName>
+<TargetClockPeriod>10.00</TargetClockPeriod>
+<ClockUncertainty>2.70</ClockUncertainty>
+<FlowTarget>vivado</FlowTarget>
+</UserAssignments>
+
+<PerformanceEstimates>
+<PipelineType>no</PipelineType>
+<SummaryOfTimingAnalysis>
+<unit>ns</unit>
+<EstimatedClockPeriod>7.591</EstimatedClockPeriod>
+</SummaryOfTimingAnalysis>
+<SummaryOfOverallLatency>
+<unit>clock cycles</unit>
+<Best-caseLatency>80689</Best-caseLatency>
+<Average-caseLatency>342925</Average-caseLatency>
+<Worst-caseLatency>907741</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.807 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>3.429 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>9.077 ms</Worst-caseRealTimeLatency>
+<Interval-min>80689</Interval-min>
+<Interval-max>907741</Interval-max>
+</SummaryOfOverallLatency>
+<SummaryOfLoopLatency>
+<ReadInputHeight_ReadInputWidth>
+<TripCount>20172</TripCount>
+<Latency>
+<range>
+<min>80688</min>
+<max>907740</max>
+</range>
+</Latency>
+<AbsoluteTimeLatency>
+<range>
+<min>806880</min>
+<max>9077400</max>
+</range>
+</AbsoluteTimeLatency>
+<IterationLatency>
+<range>
+<min>4</min>
+<max>45</max>
+</range>
+</IterationLatency>
+<InstanceList>
+</InstanceList>
+</ReadInputHeight_ReadInputWidth>
+</SummaryOfLoopLatency>
+</PerformanceEstimates>
+
+<AreaEstimates>
+<Resources>
+<BRAM_18K>1</BRAM_18K>
+<DSP>1</DSP>
+<FF>1277</FF>
+<LUT>1393</LUT>
+<URAM>0</URAM>
+</Resources>
+<AvailableResources>
+<BRAM_18K>280</BRAM_18K>
+<DSP>220</DSP>
+<FF>106400</FF>
+<LUT>53200</LUT>
+<URAM>0</URAM>
+</AvailableResources>
+</AreaEstimates>
+
+<InterfaceSummary>
+<RtlPorts>
+<name>ap_clk</name>
+<Object>conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 1u&gt;, array&lt;ap_fixed&lt;37, 17, 5, 3, 0&gt;, 4u&gt;, config2&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_rst</name>
+<Object>conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 1u&gt;, array&lt;ap_fixed&lt;37, 17, 5, 3, 0&gt;, 4u&gt;, config2&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_start</name>
+<Object>conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 1u&gt;, array&lt;ap_fixed&lt;37, 17, 5, 3, 0&gt;, 4u&gt;, config2&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>start_full_n</name>
+<Object>conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 1u&gt;, array&lt;ap_fixed&lt;37, 17, 5, 3, 0&gt;, 4u&gt;, config2&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>unknown</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_done</name>
+<Object>conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 1u&gt;, array&lt;ap_fixed&lt;37, 17, 5, 3, 0&gt;, 4u&gt;, config2&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_continue</name>
+<Object>conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 1u&gt;, array&lt;ap_fixed&lt;37, 17, 5, 3, 0&gt;, 4u&gt;, config2&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_idle</name>
+<Object>conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 1u&gt;, array&lt;ap_fixed&lt;37, 17, 5, 3, 0&gt;, 4u&gt;, config2&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_ready</name>
+<Object>conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 1u&gt;, array&lt;ap_fixed&lt;37, 17, 5, 3, 0&gt;, 4u&gt;, config2&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>start_out</name>
+<Object>conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 1u&gt;, array&lt;ap_fixed&lt;37, 17, 5, 3, 0&gt;, 4u&gt;, config2&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>unknown</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>start_write</name>
+<Object>conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 1u&gt;, array&lt;ap_fixed&lt;37, 17, 5, 3, 0&gt;, 4u&gt;, config2&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>unknown</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>layer7_out_dout</name>
+<Object>layer7_out</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>16</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>layer7_out_empty_n</name>
+<Object>layer7_out</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>layer7_out_read</name>
+<Object>layer7_out</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>layer2_out_din</name>
+<Object>layer2_out</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>148</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>layer2_out_full_n</name>
+<Object>layer2_out</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>layer2_out_write</name>
+<Object>layer2_out</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+</InterfaceSummary>
+
+</profile>

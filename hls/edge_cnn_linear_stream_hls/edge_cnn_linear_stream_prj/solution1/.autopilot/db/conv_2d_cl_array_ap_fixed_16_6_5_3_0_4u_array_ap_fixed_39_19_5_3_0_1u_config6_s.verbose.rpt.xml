@@ -1,0 +1,133 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'conv_2d_cl_array_ap_fixed_16_6_5_3_0_4u_array_ap_fixed_39_19_5_3_0_1u_config6_s'" level="0">
+<item name = "Date">Tue May 26 01:13:14 2026
+</item>
+<item name = "Version">2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)</item>
+<item name = "Project">edge_cnn_linear_stream_prj</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.591 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">100862, 907742, 1.009 ms, 9.077 ms, 100862, 907742, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_compute_output_buffer_2d_array_ap_fixed_16_6_5_3_0_4u_array_ap_fixed_39_19_5_3_0_1u_config6_s_fu_160">compute_output_buffer_2d_array_ap_fixed_16_6_5_3_0_4u_array_ap_fixed_39_19_5_3_0_1u_config6_s, 3, 43, 30.000 ns, 0.430 us, 3, 43, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- ReadInputHeight_ReadInputWidth">100860, 907740, 5 ~ 45, -, -, 20172, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 38, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">1, 1, 2533, 2180, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 52, -</column>
+<column name="Register">-, -, 85, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">~0, ~0, 2, 4, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_compute_output_buffer_2d_array_ap_fixed_16_6_5_3_0_4u_array_ap_fixed_39_19_5_3_0_1u_config6_s_fu_160">compute_output_buffer_2d_array_ap_fixed_16_6_5_3_0_4u_array_ap_fixed_39_19_5_3_0_1u_config6_s, 1, 1, 2533, 2180, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln85_fu_282_p2">+, 0, 0, 20, 15, 1</column>
+<column name="ap_block_state2">and, 0, 0, 2, 1, 1</column>
+<column name="grp_compute_output_buffer_2d_array_ap_fixed_16_6_5_3_0_4u_array_ap_fixed_39_19_5_3_0_1u_config6_s_fu_160_layer6_out_TREADY">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln85_fu_276_p2">icmp, 0, 0, 12, 15, 15</column>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">25, 5, 1, 5</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="indvar_flatten_fu_150">9, 2, 15, 30</column>
+<column name="layer9_out_blk_n">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">4, 0, 4, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="grp_compute_output_buffer_2d_array_ap_fixed_16_6_5_3_0_4u_array_ap_fixed_39_19_5_3_0_1u_config6_s_fu_160_ap_start_reg">1, 0, 1, 0</column>
+<column name="indvar_flatten_fu_150">15, 0, 15, 0</column>
+<column name="trunc_ln144_5_reg_351">16, 0, 16, 0</column>
+<column name="trunc_ln144_6_reg_356">16, 0, 16, 0</column>
+<column name="trunc_ln144_reg_341">16, 0, 16, 0</column>
+<column name="trunc_ln144_s_reg_346">16, 0, 16, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 4u&gt;, array&lt;ap_fixed&lt;39, 19, 5, 3, 0&gt;, 1u&gt;, config6&gt;, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 4u&gt;, array&lt;ap_fixed&lt;39, 19, 5, 3, 0&gt;, 1u&gt;, config6&gt;, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 4u&gt;, array&lt;ap_fixed&lt;39, 19, 5, 3, 0&gt;, 1u&gt;, config6&gt;, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 4u&gt;, array&lt;ap_fixed&lt;39, 19, 5, 3, 0&gt;, 1u&gt;, config6&gt;, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 4u&gt;, array&lt;ap_fixed&lt;39, 19, 5, 3, 0&gt;, 1u&gt;, config6&gt;, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 4u&gt;, array&lt;ap_fixed&lt;39, 19, 5, 3, 0&gt;, 1u&gt;, config6&gt;, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, conv_2d_cl&lt;array&lt;ap_fixed&lt;16, 6, 5, 3, 0&gt;, 4u&gt;, array&lt;ap_fixed&lt;39, 19, 5, 3, 0&gt;, 1u&gt;, config6&gt;, return value</column>
+<column name="layer9_out_dout">in, 64, ap_fifo, layer9_out, pointer</column>
+<column name="layer9_out_empty_n">in, 1, ap_fifo, layer9_out, pointer</column>
+<column name="layer9_out_read">out, 1, ap_fifo, layer9_out, pointer</column>
+<column name="layer6_out_TDATA">out, 64, axis, layer6_out, pointer</column>
+<column name="layer6_out_TVALID">out, 1, axis, layer6_out, pointer</column>
+<column name="layer6_out_TREADY">in, 1, axis, layer6_out, pointer</column>
+</table>
+</item>
+</section>
+</profile>

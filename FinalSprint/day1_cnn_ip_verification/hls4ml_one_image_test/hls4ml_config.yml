@@ -1,0 +1,56 @@
+Backend: Vivado
+ClockPeriod: 5
+ClockUncertainty: 12.5%
+HLSConfig:
+  LayerName:
+    conv1_2filters:
+      Precision:
+        bias: auto
+        result: auto
+        weight: auto
+      Trace: false
+    conv1_2filters_relu:
+      Precision:
+        result: auto
+      Trace: false
+    conv2_output_logits:
+      Precision:
+        bias: auto
+        result: auto
+        weight: auto
+      Trace: false
+    input_image:
+      Precision:
+        result: auto
+      Trace: false
+  Model:
+    BitExact: null
+    BramFactor: 1000000000
+    Precision: ap_fixed<8,2>
+    ReuseFactor: 1
+    Strategy: Resource
+    TraceOutput: false
+IOType: io_stream
+InputData: null
+InputShapes:
+  input_image:
+  - 121
+  - 162
+  - 1
+KerasModel: !keras_model 'hls4ml_one_image_test/keras_model.keras'
+OutputDir: hls4ml_one_image_test
+OutputPredictions: null
+OutputShapes:
+  layer4_out:
+  - 121
+  - 162
+  - 1
+Part: xc7z020clg400-1
+ProjectName: myproject
+Stamp: d1309eeb
+Version: 1.0.0
+WriterConfig:
+  Namespace: null
+  TBOutputStream: both
+  WriteTar: false
+  WriteWeightsTxt: true

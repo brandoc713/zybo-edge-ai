@@ -1,0 +1,56 @@
+Backend: Vivado
+ClockPeriod: 5
+ClockUncertainty: 12.5%
+HLSConfig:
+  LayerName:
+    conv1_2filters:
+      Precision: ap_fixed<8,2>
+      ReuseFactor: 64
+      Strategy: Resource
+      Trace: false
+    conv1_2filters_relu:
+      Precision: ap_fixed<8,2>
+      ReuseFactor: 64
+      Strategy: Resource
+      Trace: false
+    conv2_output_logits:
+      Precision: ap_fixed<8,2>
+      ReuseFactor: 64
+      Strategy: Resource
+      Trace: false
+    input_image:
+      Precision: ap_fixed<8,2>
+      ReuseFactor: 64
+      Strategy: Resource
+      Trace: false
+  Model:
+    BitExact: null
+    BramFactor: 1000000000
+    Precision: ap_fixed<8,2>
+    ReuseFactor: 64
+    Strategy: Resource
+    TraceOutput: false
+IOType: io_stream
+InputData: null
+InputShapes:
+  input_image:
+  - 121
+  - 162
+  - 1
+KerasModel: !keras_model 'edge_cnn_minimal_2filter_sobel_hls/keras_model.keras'
+OutputDir: edge_cnn_minimal_2filter_sobel_hls
+OutputPredictions: null
+OutputShapes:
+  layer4_out:
+  - 121
+  - 162
+  - 1
+Part: xc7z020clg400-1
+ProjectName: myproject
+Stamp: f520685d
+Version: 1.0.0
+WriterConfig:
+  Namespace: null
+  TBOutputStream: both
+  WriteTar: false
+  WriteWeightsTxt: true

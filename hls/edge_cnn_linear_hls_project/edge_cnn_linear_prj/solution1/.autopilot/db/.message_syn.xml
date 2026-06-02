@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.023 seconds; current allocated memory: 1.161 GB." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;firmware/edge_cnn_linear.cpp&apos; ..." resolution=""/>
+	<Message severity="WARNING" prefix="[HLS 207-5551]" key="HLS 207-5551" tag="" content="unexpected pragma argument &apos;instances&apos;, expects function/operation (firmware/nnet_utils/nnet_activation.h:402:24)" resolution=""/>
+	<Message severity="WARNING" prefix="[HLS 207-5523]" key="HLS 207-5523" tag="" content="&apos;Resource pragma&apos; is deprecated, use &apos;bind_op/bind_storage pragma&apos; instead (firmware/nnet_utils/nnet_dense_resource.h:33:9)" resolution=""/>
+	<Message severity="WARNING" prefix="[HLS 207-5523]" key="HLS 207-5523" tag="" content="&apos;Resource pragma&apos; is deprecated, use &apos;bind_op/bind_storage pragma&apos; instead (firmware/nnet_utils/nnet_dense_resource.h:107:9)" resolution=""/>
+	<Message severity="WARNING" prefix="[HLS 207-5523]" key="HLS 207-5523" tag="" content="&apos;Resource pragma&apos; is deprecated, use &apos;bind_op/bind_storage pragma&apos; instead (firmware/nnet_utils/nnet_dense_resource.h:189:9)" resolution=""/>
+	<Message severity="WARNING" prefix="[HLS 207-5524]" key="HLS 207-5524" tag="" content="&apos;region&apos; in &apos;#pragma HLS Inline&apos; is deprecated, use &apos;Inline Pragma&apos; instead (firmware/nnet_utils/nnet_conv2d.h:48:26)" resolution=""/>
+	<Message severity="WARNING" prefix="[HLS 207-5524]" key="HLS 207-5524" tag="" content="&apos;region&apos; in &apos;#pragma HLS Inline&apos; is deprecated, use &apos;Inline Pragma&apos; instead (firmware/nnet_utils/nnet_conv2d.h:66:26)" resolution=""/>
+	<Message severity="WARNING" prefix="[HLS 207-5551]" key="HLS 207-5551" tag="" content="unexpected pragma argument &apos;instances&apos;, expects function/operation (firmware/nnet_utils/nnet_conv2d_stream.h:80:24)" resolution=""/>
+	<Message severity="WARNING" prefix="[HLS 207-5551]" key="HLS 207-5551" tag="" content="unexpected pragma argument &apos;instances&apos;, expects function/operation (firmware/nnet_utils/nnet_conv2d_stream.h:81:24)" resolution=""/>
+	<Message severity="WARNING" prefix="[HLS 207-5553]" key="HLS 207-5553" tag="" content="Unsupported interface port data type in &apos;#pragma HLS interface ap_vld&apos; (firmware/edge_cnn_linear.cpp:15:47)" resolution=""/>
+	<Message severity="INFO" prefix="[Common 17-41]" key="Common 17-41" tag="" content="Interrupt caught. Command should exit soon." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 398.966 seconds; current allocated memory: 0.461 MB." resolution=""/>
+	<Message severity="INFO" prefix="[Common 17-344]" key="Common 17-344" tag="" content="&apos;source&apos; was cancelled" resolution=""/>
+</Messages>

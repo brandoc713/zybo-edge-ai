@@ -1,0 +1,70 @@
+Backend: Vivado
+ClockPeriod: 5
+ClockUncertainty: 12.5%
+HLSConfig:
+  LayerName:
+    conv1:
+      Precision:
+        bias: auto
+        result: auto
+        weight: auto
+      ReuseFactor: 36
+      Trace: false
+    conv1_relu:
+      Precision:
+        result: auto
+      Trace: false
+    conv2:
+      Precision:
+        bias: auto
+        result: auto
+        weight: auto
+      ReuseFactor: 144
+      Trace: false
+    conv2_relu:
+      Precision:
+        result: auto
+      Trace: false
+    edge_output:
+      Precision:
+        bias: auto
+        result: auto
+        weight: auto
+      ReuseFactor: 36
+      Trace: false
+    input_image:
+      Precision:
+        result: auto
+      Trace: false
+  Model:
+    BitExact: null
+    BramFactor: 1000000000
+    Precision:
+      default: fixed<16,6>
+    ReuseFactor: 1
+    Strategy: Resource
+    TraceOutput: false
+IOType: io_parallel
+InputData: null
+InputShapes:
+  input_image:
+  - 121
+  - 162
+  - 1
+KerasModel: !keras_model '/content/drive/MyDrive/zybo-edge-ai/hls/edge_cnn_linear_hls/keras_model.keras'
+OutputDir: /content/drive/MyDrive/zybo-edge-ai/hls/edge_cnn_linear_hls
+OutputPredictions: null
+OutputShapes:
+  layer6_out:
+  - 121
+  - 162
+  - 1
+Part: xcvu13p-flga2577-2-e
+ProjectName: edge_cnn_linear
+Stamp: 3c56dcbb
+Version: 1.0.0
+WriterConfig:
+  Namespace: null
+  TBOutputStream: both
+  WriteTar: false
+  WriteWeightsTxt: true

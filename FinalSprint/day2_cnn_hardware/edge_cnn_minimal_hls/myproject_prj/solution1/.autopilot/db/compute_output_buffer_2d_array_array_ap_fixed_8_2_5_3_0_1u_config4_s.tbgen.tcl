@@ -1,0 +1,682 @@
+set moduleName compute_output_buffer_2d_array_array_ap_fixed_8_2_5_3_0_1u_config4_s
+set isTopModule 0
+set isCombinational 0
+set isDatapathOnly 0
+set isPipelined 0
+set pipeline_type none
+set FunctionProtocol ap_ctrl_hs
+set isOneStateSeq 0
+set ProfileFlag 0
+set StallSigGenFlag 0
+set isEnableWaveformDebug 1
+set C_modelName {compute_output_buffer_2d<array,array<ap_fixed<8,2,5,3,0>,1u>,config4>}
+set C_modelType { void 0 }
+set C_modelArgList {
+	{ p_read int 8 regular  }
+	{ p_read1 int 8 regular  }
+	{ layer4_out int 8 regular {axi_s 1 volatile  { layer4_out Data } }  }
+}
+set C_modelArgMapList {[ 
+	{ "Name" : "p_read", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY"} , 
+ 	{ "Name" : "p_read1", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY"} , 
+ 	{ "Name" : "layer4_out", "interface" : "axis", "bitwidth" : 8, "direction" : "WRITEONLY"} ]}
+# RTL Port declarations: 
+set portNum 11
+set portList { 
+	{ ap_clk sc_in sc_logic 1 clock -1 } 
+	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
+	{ ap_start sc_in sc_logic 1 start -1 } 
+	{ ap_done sc_out sc_logic 1 predone -1 } 
+	{ ap_idle sc_out sc_logic 1 done -1 } 
+	{ ap_ready sc_out sc_logic 1 ready -1 } 
+	{ p_read sc_in sc_lv 8 signal 0 } 
+	{ p_read1 sc_in sc_lv 8 signal 1 } 
+	{ layer4_out_TDATA sc_out sc_lv 8 signal 2 } 
+	{ layer4_out_TVALID sc_out sc_logic 1 outvld 2 } 
+	{ layer4_out_TREADY sc_in sc_logic 1 outacc 2 } 
+}
+set NewPortList {[ 
+	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
+ 	{ "name": "ap_rst", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst", "role": "default" }} , 
+ 	{ "name": "ap_start", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "start", "bundle":{"name": "ap_start", "role": "default" }} , 
+ 	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
+ 	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
+ 	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
+ 	{ "name": "p_read", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "p_read", "role": "default" }} , 
+ 	{ "name": "p_read1", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "p_read1", "role": "default" }} , 
+ 	{ "name": "layer4_out_TDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "layer4_out", "role": "TDATA" }} , 
+ 	{ "name": "layer4_out_TVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "layer4_out", "role": "TVALID" }} , 
+ 	{ "name": "layer4_out_TREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "outacc", "bundle":{"name": "layer4_out", "role": "TREADY" }}  ]}
+
+set RtlHierarchyInfo {[
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "6"],
+		"CDFG" : "compute_output_buffer_2d_array_array_ap_fixed_8_2_5_3_0_1u_config4_s",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "0",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "3", "EstimateLatencyMax" : "23",
+		"Combinational" : "0",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "p_read", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_read1", "Type" : "None", "Direction" : "I"},
+			{"Name" : "layer4_out", "Type" : "Axis", "Direction" : "O",
+				"BlockSignal" : [
+					{"Name" : "layer4_out_TDATA_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_0", "Type" : "Memory", "Direction" : "X",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_0", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer", "Type" : "Memory", "Direction" : "X",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_0", "Type" : "Memory", "Direction" : "X",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_0", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1", "Type" : "Memory", "Direction" : "X",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "sX", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "sY", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "pY", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "pX", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "w4_V", "Type" : "Memory", "Direction" : "I",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "w4_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Parent" : "0", "Child" : ["2", "3", "4", "5"],
+		"CDFG" : "shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "1",
+		"VariableLatency" : "0", "ExactLatency" : "0", "EstimateLatencyMin" : "0", "EstimateLatencyMax" : "0",
+		"Combinational" : "0",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "p_read", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_read1", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_0", "Type" : "Memory", "Direction" : "X"},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer", "Type" : "Memory", "Direction" : "X"},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_0", "Type" : "Memory", "Direction" : "X"},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1", "Type" : "Memory", "Direction" : "X"}]},
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122.void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_0_U", "Parent" : "1"},
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122.void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_U", "Parent" : "1"},
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122.void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_0_U", "Parent" : "1"},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122.void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_U", "Parent" : "1"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Parent" : "0", "Child" : ["7", "8", "9", "10"],
+		"CDFG" : "dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"Pipeline" : "Rewind", "UnalignedPipeline" : "0", "RewindPipeline" : "1", "ProcessNetwork" : "0",
+		"II" : "0",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "19", "EstimateLatencyMax" : "20",
+		"Combinational" : "0",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "w4_V", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a", "Type" : "None", "Direction" : "I"}],
+		"Loop" : [
+			{"Name" : "ReuseLoop", "PipelineType" : "UPC",
+				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
+	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174.w4_V_U", "Parent" : "6"},
+	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174.mux_185_8_1_1_U68", "Parent" : "6"},
+	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174.mul_8s_7s_14_1_1_U69", "Parent" : "6"},
+	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174.flow_control_loop_pipe_no_ap_cont_U", "Parent" : "6"}]}
+
+
+set ArgLastReadFirstWriteLatency {
+	compute_output_buffer_2d_array_array_ap_fixed_8_2_5_3_0_1u_config4_s {
+		p_read {Type I LastRead 0 FirstWrite -1}
+		p_read1 {Type I LastRead 0 FirstWrite -1}
+		layer4_out {Type O LastRead -1 FirstWrite 2}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a {Type IO LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_0 {Type X LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer {Type X LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_0 {Type X LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1 {Type X LastRead -1 FirstWrite -1}
+		sX {Type IO LastRead -1 FirstWrite -1}
+		sY {Type IO LastRead -1 FirstWrite -1}
+		pY {Type IO LastRead -1 FirstWrite -1}
+		pX {Type IO LastRead -1 FirstWrite -1}
+		w4_V {Type I LastRead -1 FirstWrite -1}}
+	shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s {
+		p_read {Type I LastRead 0 FirstWrite -1}
+		p_read1 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7 {Type IO LastRead 0 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9 {Type O LastRead -1 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6 {Type IO LastRead 0 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8 {Type O LastRead -1 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1 {Type IO LastRead 0 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3 {Type O LastRead -1 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig {Type IO LastRead 0 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2 {Type O LastRead -1 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3 {Type IO LastRead 0 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5 {Type O LastRead -1 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2 {Type IO LastRead 0 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4 {Type O LastRead -1 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5 {Type IO LastRead 0 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4 {Type IO LastRead 0 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7 {Type IO LastRead 0 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6 {Type IO LastRead 0 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1 {Type IO LastRead 0 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a {Type IO LastRead 0 FirstWrite 0}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_0 {Type X LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer {Type X LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_0 {Type X LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1 {Type X LastRead -1 FirstWrite -1}}
+	dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s {
+		w4_V {Type I LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a {Type I LastRead 0 FirstWrite -1}}}
+
+set hasDtUnsupportedChannel 0
+
+set PerformanceInfo {[
+	{"Name" : "Latency", "Min" : "3", "Max" : "23"}
+	, {"Name" : "Interval", "Min" : "3", "Max" : "23"}
+]}
+
+set PipelineEnableSignalInfo {[
+]}
+
+set Spec2ImplPortList { 
+	p_read { ap_none {  { p_read in_data 0 8 } } }
+	p_read1 { ap_none {  { p_read1 in_data 0 8 } } }
+	layer4_out { axis {  { layer4_out_TDATA out_data 1 8 }  { layer4_out_TVALID out_vld 1 1 }  { layer4_out_TREADY out_acc 0 1 } } }
+}
+set moduleName compute_output_buffer_2d_array_array_ap_fixed_8_2_5_3_0_1u_config4_s
+set isTopModule 0
+set isCombinational 0
+set isDatapathOnly 0
+set isPipelined 0
+set pipeline_type none
+set FunctionProtocol ap_ctrl_hs
+set isOneStateSeq 0
+set ProfileFlag 0
+set StallSigGenFlag 0
+set isEnableWaveformDebug 1
+set C_modelName {compute_output_buffer_2d<array,array<ap_fixed<8,2,5,3,0>,1u>,config4>}
+set C_modelType { void 0 }
+set C_modelArgList {
+	{ p_read int 8 regular  }
+	{ p_read1 int 8 regular  }
+	{ layer4_out int 8 regular {axi_s 1 volatile  { layer4_out Data } }  }
+}
+set C_modelArgMapList {[ 
+	{ "Name" : "p_read", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY"} , 
+ 	{ "Name" : "p_read1", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY"} , 
+ 	{ "Name" : "layer4_out", "interface" : "axis", "bitwidth" : 8, "direction" : "WRITEONLY"} ]}
+# RTL Port declarations: 
+set portNum 11
+set portList { 
+	{ ap_clk sc_in sc_logic 1 clock -1 } 
+	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
+	{ ap_start sc_in sc_logic 1 start -1 } 
+	{ ap_done sc_out sc_logic 1 predone -1 } 
+	{ ap_idle sc_out sc_logic 1 done -1 } 
+	{ ap_ready sc_out sc_logic 1 ready -1 } 
+	{ p_read sc_in sc_lv 8 signal 0 } 
+	{ p_read1 sc_in sc_lv 8 signal 1 } 
+	{ layer4_out_TDATA sc_out sc_lv 8 signal 2 } 
+	{ layer4_out_TVALID sc_out sc_logic 1 outvld 2 } 
+	{ layer4_out_TREADY sc_in sc_logic 1 outacc 2 } 
+}
+set NewPortList {[ 
+	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
+ 	{ "name": "ap_rst", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst", "role": "default" }} , 
+ 	{ "name": "ap_start", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "start", "bundle":{"name": "ap_start", "role": "default" }} , 
+ 	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
+ 	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
+ 	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
+ 	{ "name": "p_read", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "p_read", "role": "default" }} , 
+ 	{ "name": "p_read1", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "p_read1", "role": "default" }} , 
+ 	{ "name": "layer4_out_TDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "layer4_out", "role": "TDATA" }} , 
+ 	{ "name": "layer4_out_TVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "layer4_out", "role": "TVALID" }} , 
+ 	{ "name": "layer4_out_TREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "outacc", "bundle":{"name": "layer4_out", "role": "TREADY" }}  ]}
+
+set RtlHierarchyInfo {[
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "6"],
+		"CDFG" : "compute_output_buffer_2d_array_array_ap_fixed_8_2_5_3_0_1u_config4_s",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "0",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "3", "EstimateLatencyMax" : "23",
+		"Combinational" : "0",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "p_read", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_read1", "Type" : "None", "Direction" : "I"},
+			{"Name" : "layer4_out", "Type" : "Axis", "Direction" : "O",
+				"BlockSignal" : [
+					{"Name" : "layer4_out_TDATA_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a", "Inst_start_state" : "1", "Inst_end_state" : "1"},
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_0", "Type" : "Memory", "Direction" : "X",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_0", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer", "Type" : "Memory", "Direction" : "X",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_0", "Type" : "Memory", "Direction" : "X",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_0", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1", "Type" : "Memory", "Direction" : "X",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Port" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1", "Inst_start_state" : "1", "Inst_end_state" : "1"}]},
+			{"Name" : "sX", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "sY", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "pY", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "pX", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "w4_V", "Type" : "Memory", "Direction" : "I",
+				"SubConnect" : [
+					{"ID" : "6", "SubInstance" : "grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Port" : "w4_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122", "Parent" : "0", "Child" : ["2", "3", "4", "5"],
+		"CDFG" : "shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "1",
+		"VariableLatency" : "0", "ExactLatency" : "0", "EstimateLatencyMin" : "0", "EstimateLatencyMax" : "0",
+		"Combinational" : "0",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "p_read", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_read1", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_0", "Type" : "Memory", "Direction" : "X"},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer", "Type" : "Memory", "Direction" : "X"},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_0", "Type" : "Memory", "Direction" : "X"},
+			{"Name" : "void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1", "Type" : "Memory", "Direction" : "X"}]},
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122.void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_0_U", "Parent" : "1"},
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122.void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_U", "Parent" : "1"},
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122.void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_0_U", "Parent" : "1"},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.call_ln281_shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s_fu_122.void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_U", "Parent" : "1"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174", "Parent" : "0", "Child" : ["7", "8", "9", "10"],
+		"CDFG" : "dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"Pipeline" : "Rewind", "UnalignedPipeline" : "0", "RewindPipeline" : "1", "ProcessNetwork" : "0",
+		"II" : "0",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "19", "EstimateLatencyMax" : "20",
+		"Combinational" : "0",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "w4_V", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1", "Type" : "None", "Direction" : "I"},
+			{"Name" : "void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a", "Type" : "None", "Direction" : "I"}],
+		"Loop" : [
+			{"Name" : "ReuseLoop", "PipelineType" : "UPC",
+				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
+	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174.w4_V_U", "Parent" : "6"},
+	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174.mux_185_8_1_1_U68", "Parent" : "6"},
+	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174.mul_8s_7s_14_1_1_U69", "Parent" : "6"},
+	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s_fu_174.flow_control_loop_pipe_no_ap_cont_U", "Parent" : "6"}]}
+
+
+set ArgLastReadFirstWriteLatency {
+	compute_output_buffer_2d_array_array_ap_fixed_8_2_5_3_0_1u_config4_s {
+		p_read {Type I LastRead 0 FirstWrite -1}
+		p_read1 {Type I LastRead 0 FirstWrite -1}
+		layer4_out {Type O LastRead -1 FirstWrite 2}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5 {Type IO LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a {Type IO LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_0 {Type X LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer {Type X LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_0 {Type X LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1 {Type X LastRead -1 FirstWrite -1}
+		sX {Type IO LastRead -1 FirstWrite -1}
+		sY {Type IO LastRead -1 FirstWrite -1}
+		pY {Type IO LastRead -1 FirstWrite -1}
+		pX {Type IO LastRead -1 FirstWrite -1}
+		w4_V {Type I LastRead -1 FirstWrite -1}}
+	shift_line_buffer_array_ap_fixed_8_2_5_3_0_2u_config4_s {
+		p_read {Type I LastRead 0 FirstWrite -1}
+		p_read1 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7 {Type IO LastRead 0 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9 {Type O LastRead -1 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6 {Type IO LastRead 0 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8 {Type O LastRead -1 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1 {Type IO LastRead 0 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3 {Type O LastRead -1 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig {Type IO LastRead 0 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2 {Type O LastRead -1 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3 {Type IO LastRead 0 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5 {Type O LastRead -1 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2 {Type IO LastRead 0 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4 {Type O LastRead -1 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5 {Type IO LastRead 0 FirstWrite 0}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4 {Type IO LastRead 0 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7 {Type IO LastRead 0 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6 {Type IO LastRead 0 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1 {Type IO LastRead 0 FirstWrite 0}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a {Type IO LastRead 0 FirstWrite 0}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_0 {Type X LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer {Type X LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1_0 {Type X LastRead -1 FirstWrite -1}
+		void_conv_2d_buffer_cl_stream_stream_weight_t_bias_t_line_buffer_1 {Type X LastRead -1 FirstWrite -1}}
+	dense_resource_rf_leq_nin_ap_fixed_ap_fixed_8_2_5_3_0_config4_mult_s {
+		w4_V {Type I LastRead -1 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_9 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_8 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_7 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_6 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_5 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_4 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_3 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_2 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig_1 {Type I LastRead 0 FirstWrite -1}
+		void_compute_output_buffer_2d_array_const_ap_shift_reg_n_chan_stream_weig {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_7 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_6 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_5 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_4 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_3 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_2 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a_1 {Type I LastRead 0 FirstWrite -1}
+		p_ZZN4nnet24compute_output_buffer_2dINS_5arrayI8ap_fixedILi8ELi2EL9ap_q_mode5EL9a {Type I LastRead 0 FirstWrite -1}}}
+
+set hasDtUnsupportedChannel 0
+
+set PerformanceInfo {[
+	{"Name" : "Latency", "Min" : "3", "Max" : "23"}
+	, {"Name" : "Interval", "Min" : "3", "Max" : "23"}
+]}
+
+set PipelineEnableSignalInfo {[
+]}
+
+set Spec2ImplPortList { 
+	p_read { ap_none {  { p_read in_data 0 8 } } }
+	p_read1 { ap_none {  { p_read1 in_data 0 8 } } }
+	layer4_out { axis {  { layer4_out_TDATA out_data 1 8 }  { layer4_out_TVALID out_vld 1 1 }  { layer4_out_TREADY out_acc 0 1 } } }
+}
