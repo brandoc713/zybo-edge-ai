@@ -1,0 +1,9 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_Zybo-Z7-20-pcam-5c_system,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_Zybo-Z7-20-pcam-5c_system_1,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_Zybo-Z7-20-pcam-5c_system_2,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_Zybo-Z7-20-pcam-5c_system_3,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_Zybo-Z7-20-pcam-5c_system_4
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_Zybo-Z7-20-pcam-5c_system/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_Zybo-Z7-20-pcam-5c_system/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_pcam_hdmi_system/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_pcam_hdmi_system/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

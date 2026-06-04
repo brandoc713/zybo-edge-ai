@@ -1,0 +1,10 @@
+2026-04-23T14:22:31.124519300255-14:22:31 **** Incremental Build of configuration Debug for project Zybo-Z7-20-pcam-5c ****
+000-make all 
+000-make --no-print-directory pre-build
+000-a9-linaro-pre-build-step
+000-' '
+000-make --no-print-directory main-build
+000-make[1]: Nothing to be done for 'main-build'.
+00255-
+14:22:31 Build Finished (took 305ms)
+

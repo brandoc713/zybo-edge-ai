@@ -1,0 +1,10 @@
+14:20:14 **** Build of configuration Debug for project pcam_hdmi_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 62952 C:/Users/brand/Documents/engs192/zybo-edge-ai/2021.1_Pcam_VitisWorkspace/hw_pcam/export/hw_pcam/hw_pcam.xpfm standalone_domain C:/Users/brand/Documents/engs192/zybo-edge-ai/2021.1_Pcam_VitisWorkspace/pcam_hdmi_system/Debug/system.bif
+sdcard_gen --xpfm C:/Users/brand/Documents/engs192/zybo-edge-ai/2021.1_Pcam_VitisWorkspace/hw_pcam/export/hw_pcam/hw_pcam.xpfm --sys_config hw_pcam --bif C:/Users/brand/Documents/engs192/zybo-edge-ai/2021.1_Pcam_VitisWorkspace/pcam_hdmi_system/Debug/system.bif --bitstream C:/Users/brand/Documents/engs192/zybo-edge-ai/2021.1_Pcam_VitisWorkspace/pcam_hdmi/_ide/bitstream/system_wrapper.bit --elf C:/Users/brand/Documents/engs192/zybo-edge-ai/2021.1_Pcam_VitisWorkspace/pcam_hdmi/Debug/pcam_hdmi.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/Users/brand/Documents/engs192/zybo-edge-ai/2021.1_Pcam_VitisWorkspace/pcam_hdmi/_ide/bitstream/system_wrapper.bit
+Running C:/Xilinx/Vitis/2021.2/bin/bootgen  -image C:/Users/brand/Documents/engs192/zybo-edge-ai/2021.1_Pcam_VitisWorkspace/pcam_hdmi_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+14:20:20 Build Finished (took 5s.569ms)
+
