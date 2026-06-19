@@ -7,6 +7,9 @@ The goal of this project was not to build the highest-accuracy edge detector or 
 ```text
 Train CNN → Convert with hls4ml → Synthesize with Vitis HLS → Integrate in Vivado → Run on Zybo Z7-20 → Display CNN edge output
 ```
+## Project Demo Video
+Click thumbnail below to see system demo.
+[![Click to watch the video](/thumbnail.png)]([https://drive.google.com/file/d/YOUR_FILE_ID/view](https://drive.google.com/file/d/1RjMDtX8hW4EQQq82e80l9WtpC_6lAyn4/view))
 
 ## Project Overview
 
